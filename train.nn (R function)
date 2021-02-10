@@ -87,7 +87,7 @@ train.nn = function(X, y, neurons, epochs, lr, act_h, act_o, momentum, lambda){
   computeCost <- function(y, Z, pars) {
     w2 = NULL
     for (i in 1:(length(pars)/2)){
-      w2 = cbind(w2, t(c(diag(crossprod (pars[[2]])))))
+      w2 = cbind(w2, t(c(diag(crossprod (pars[[i]])))))
     }
     penalty = 1/2*lambda*sum(w2)
     n <- dim(y)[1]
